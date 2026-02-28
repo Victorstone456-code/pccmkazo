@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact - Prepared Church for Christ Ministries Kazo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<a href="https://wa.me/256772607774" 
+   class="whatsapp-float" 
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
+
+<body>
+
+<div id="preloader">
+  <div class="loader-content">
+    <img src="pccm.png" alt="Church Logo">
+    <h3>Prepared Church for Christ Ministries Kazo</h3>
+  </div>
+</div>
+
+<!-- WhatsApp Button (MOVED INSIDE BODY) -->
+<a href="https://wa.me/256772607774" 
+   class="whatsapp-float" 
+   target="_blank">
+   <i class="fab fa-whatsapp"></i>
+</a>
+
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <img src="pccm.png">
+    <h2>Prepared Church for Christ Ministries Kazo PCCM</h2>
+  </div>
+   <div class="hamburger" id="hamburger">
+    ☰
+  </div>
+
+  <div>
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="sermons.html">Sermons</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="hero-image">
+  <div class="particles"></div>
+  ...
+</section>
+
+<section class="contact-section">
+  <div class="contact-container">
+
+    <!-- Left Side - Info -->
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p>We would love to pray with you and hear from you.</p>
+
+      <div class="info-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Kampala, Uganda</span>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-phone"></i>
+        <span>+256 200925136</span>
+      </div>
+
+      <div class="info-box">
+        <i class="fas fa-envelope"></i>
+        <span>preparedchurch8@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- Right Side - Form -->
+    <div class="contact-form-box">
+      <form id="contactForm" action="https://formsubmit.co/preparedchurch8@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Church Website Message">
+
+        <h3>Send Us a Message</h3>
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit" id="submitBtn" class="submit-btn">
+                 Send Message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Success Animation -->
+<div id="successPopup" class="success-popup">
+  <div class="success-content">
+    <i class="fas fa-check-circle"></i>
+    <h3>Message Sent Successfully!</h3>
+  </div>
+</div>
+<audio id="successSound" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+
+<a href="tel:+25672607774" class="call-btn">
+  📞 Call Us for Free
+</a>
+
+
+
+
+<footer class="footer-section">
+  <div class="container">
+    <div class="row">
+
+      <!-- Church Info -->
+      <div class="col-md-4 mb-4">
+        <h4 class="footer-title">PCCM Church</h4>
+        <p>
+          Proclaiming Christ to the Nations.  
+          A place of worship, faith, and transformation.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 mb-4">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="sermons.html">sermons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 mb-4">
+        <h4 class="footer-title">Contact Us</h4>
+        <p><strong>Location:</strong> Kampala, Uganda</p>
+        <p><strong>Phone:</strong> +256 200925136</p>
+        <p><strong>Email:</strong> preparedchurch8@gmail.com</p>
+      </div>
+
+    </div>
+
+    <hr class="footer-line">
+
+    <!-- Bottom -->
+    <div class="text-center">
+      <p class="copyright">
+        &copy; 2026 PCCM Church. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
+// Navbar scroll effect
+window.addEventListener("scroll", function() {
+  const navbar = document.getElementById("navbar");
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+// Contact Form Animation
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("successPopup");
+
+if (form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+    }).then(() => {
+      popup.classList.add("active");
+      form.reset();
+
+      setTimeout(() => {
+        popup.classList.remove("active");
+      }, 4000);
+    });
+  });
+}
+</script>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
